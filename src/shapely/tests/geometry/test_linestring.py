@@ -1,9 +1,10 @@
 import numpy as np
 import pytest
+from numpy.testing import assert_array_equal
 
 import shapely
 from shapely import LinearRing, LineString, Point
-from shapely.coords import CoordinateSequence
+from shapely.coordinate_sequence import CoordinateSequence
 
 
 def test_from_coordinate_sequence():
@@ -184,8 +185,6 @@ class TestLineString:
         assert (lr == lr_clone) is True
 
     def test_numpy_linestring_coords(self):
-        from numpy.testing import assert_array_equal
-
         line = LineString([(1.0, 2.0), (3.0, 4.0)])
         expected = np.array([[1.0, 2.0], [3.0, 4.0]])
 

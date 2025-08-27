@@ -39,6 +39,20 @@ Shapely
 
 Manipulation and analysis of geometric objects in the Cartesian plane.
 
+Development requirements
+------------------------
+
+Building Shapely from source requires the GEOS C library. You can verify that
+your system has the necessary dependency installed by running the helper
+script:
+
+.. code-block:: console
+
+   $ ./scripts/check_env.sh
+
+The script prints the detected GEOS version or explains how to install the
+development libraries.
+
 .. image:: https://c2.staticflickr.com/6/5560/31301790086_b3472ea4e9_c.jpg
    :width: 800
    :height: 378

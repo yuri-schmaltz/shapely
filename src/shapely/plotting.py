@@ -1,3 +1,4 @@
+# ruff: noqa: PLC0415
 """Plot single geometries using Matplotlib.
 
 Note: this module is experimental, and mainly targeting (interactive)
@@ -11,7 +12,7 @@ import shapely
 
 
 def _default_ax():
-    import matplotlib.pyplot as plt
+    import matplotlib.pyplot as plt  # imported lazily for optional dependency
 
     ax = plt.gca()
     ax.grid(True)

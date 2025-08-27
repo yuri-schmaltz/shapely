@@ -134,9 +134,9 @@ if "clean" in sys.argv:
     p = Path(".")
     for pattern in [
         "build/lib.*/shapely/*.so",
-        "shapely/*.c",
-        "shapely/*.so",
-        "shapely/*.pyd",
+        "src/shapely/*.c",
+        "src/shapely/*.so",
+        "src/shapely/*.pyd",
     ]:
         for filename in p.glob(pattern):
             print(f"removing '{filename}'")
@@ -175,12 +175,12 @@ else:
     cython_modules = [
         Extension(
             "shapely._geometry_helpers",
-            ["shapely/_geometry_helpers.pyx"],
+            ["src/shapely/_geometry_helpers.pyx"],
             **ext_options,
         ),
         Extension(
             "shapely._geos",
-            ["shapely/_geos.pyx"],
+            ["src/shapely/_geos.pyx"],
             **ext_options,
         ),
     ]

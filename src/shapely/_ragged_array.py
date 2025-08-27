@@ -26,7 +26,7 @@ https://github.com/geoarrow/geoarrow
 
 import numpy as np
 
-from shapely import creation, geos_version
+from shapely import creation, geos_version, has_m, has_z
 from shapely._geometry import (
     GeometryType,
     get_parts,
@@ -273,8 +273,6 @@ def to_ragged_array(geometries, include_z=None, include_m=None):
            [ 0.,  0.]])
 
     """
-    from shapely import has_m, has_z  # avoid circular import
-
     geometries = np.asarray(geometries)
     if include_z is None:
         include_z = np.any(has_z(geometries[~is_empty(geometries)]))

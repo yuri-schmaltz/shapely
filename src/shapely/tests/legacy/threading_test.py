@@ -1,6 +1,10 @@
 import threading
 from binascii import b2a_hex
 
+import shapely.geos
+import shapely.wkb
+import shapely.wkt
+
 
 def main():
     num_threads = 10
@@ -22,12 +26,7 @@ def main():
 
 def runShapelyBuilding(num):
     print(f"{num}: Running shapely tests on wkb")
-    import shapely.geos
-
     print(f"{num} GEOS Handle: {shapely.geos.lgeos.geos_handle}")
-    import shapely.wkb
-    import shapely.wkt
-
     p = shapely.wkt.loads("POINT (0 0)")
     print(f"{num} WKT: {shapely.wkt.dumps(p)}")
     wkb = shapely.wkb.dumps(p)

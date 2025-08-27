@@ -1,3 +1,4 @@
+import gc
 import itertools
 import math
 import pickle
@@ -85,9 +86,6 @@ def test_references():
 
     point1 = None
     point2 = None
-
-    import gc
-
     gc.collect()
 
     # query after freeing geometries does not lead to segfault
@@ -100,8 +98,6 @@ def test_flush_geometries():
 
     # Dereference geometries
     arr[:] = None
-    import gc
-
     gc.collect()
     # Still it does not lead to a segfault
     tree.query(point)
