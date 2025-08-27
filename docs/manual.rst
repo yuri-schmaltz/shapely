@@ -795,7 +795,7 @@ directly, but can be accessed from an existing geometry as the
 
   >>> line = LineString([(0, 1), (2, 3), (4, 5)])
   >>> line.coords
-  <shapely.coords.CoordinateSequence object at ...>
+  <shapely.coordinate_sequence.CoordinateSequence object at ...>
 
 Coordinate sequences can be indexed, sliced and iterated over as if they were a
 list of coordinate tuples.
@@ -820,7 +820,7 @@ interior rings.
 
   >>> poly = Polygon([(0, 0), (0, 1), (1, 1), (0, 0)])
   >>> poly.exterior.coords
-  <shapely.coords.CoordinateSequence object at ...>
+  <shapely.coordinate_sequence.CoordinateSequence object at ...>
 
 Multipart geometries do not have a coordinate sequence. Instead the coordinate
 sequences are stored on their component geometries.
@@ -829,7 +829,7 @@ sequences are stored on their component geometries.
 
   >>> p = MultiPoint([(0, 0), (1, 1), (2, 2)])
   >>> p.geoms[2].coords
-  <shapely.coords.CoordinateSequence object at ...>
+  <shapely.coordinate_sequence.CoordinateSequence object at ...>
 
 Linear Referencing Methods
 --------------------------

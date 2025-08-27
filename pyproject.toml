@@ -62,8 +62,10 @@ Repository = "https://github.com/shapely/shapely"
 
 [tool.setuptools]
 include-package-data = false
+package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
+where = ["src"]
 include = ["shapely", "shapely.*"]
 
 [tool.setuptools.package-data]
@@ -77,8 +79,8 @@ test-command = "pytest --pyargs shapely.tests"
 enable = ["cpython-freethreading"]
 
 [tool.coverage.run]
-source = ["shapely"]
-omit = ["shapely/tests/*"]
+source = ["src/shapely"]
+omit = ["src/shapely/tests/*"]
 
 [tool.doc8]
 include = ["docs"]
@@ -88,7 +90,7 @@ max-line-length = 79
 
 [tool.ruff]
 line-length = 88
-extend-exclude = ["docs/*", "benchmarks/*", "shapely/_version.py", "versioneer.py"]
+extend-exclude = ["docs/*", "benchmarks/*", "src/shapely/_version.py", "versioneer.py"]
 
 [tool.ruff.lint]
 select = [
@@ -170,7 +172,7 @@ ignore = [
 # ignore pydocstyle errors in tests
 "**/tests/*" = ["D"]
 # the order of imports in __init__ is a bit tricky, so keep manual
-"shapely/__init__.py" = ["F401", "F403", "I"]
+"src/shapely/__init__.py" = ["F401", "F403", "I"]
 
 [tool.ruff.lint.isort]
 combine-as-imports = true

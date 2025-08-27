@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 
 from shapely import Point, geos_version
-from shapely.coords import CoordinateSequence
+from shapely.coordinate_sequence import CoordinateSequence
 from shapely.errors import DimensionError, UnsupportedGEOSVersionError
 
 

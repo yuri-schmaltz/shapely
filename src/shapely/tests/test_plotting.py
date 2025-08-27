@@ -1,4 +1,5 @@
 import pytest
+from matplotlib import colors
 from numpy.testing import assert_allclose
 
 from shapely import (
@@ -114,8 +115,6 @@ def test_plot_points():
 
 
 def equal_color(actual, expected, alpha=None):
-    from matplotlib import colors
-
     conv = colors.colorConverter
 
     return actual == conv.to_rgba(expected, alpha=alpha)

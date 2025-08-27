@@ -189,7 +189,7 @@ directly will start raising a warning::
 convert the ``.coords`` attribute instead::
 
     >>> line.coords
-    <shapely.coords.CoordinateSequence at 0x7f2e09e88d60>
+    <shapely.coordinate_sequence.CoordinateSequence at 0x7f2e09e88d60>
     >>> np.array(line.coords)
     array([[0., 0.],
            [1., 1.],

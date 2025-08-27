@@ -18,6 +18,7 @@ from shapely.geometry import (
     Polygon,
     box,
 )
+from shapely.testing import assert_geometries_equal
 
 HERE = pathlib.Path(__file__).parent
 
@@ -56,8 +57,6 @@ def test_pickle_round_trip(geom1):
     "fname", (HERE / "data").glob("*.pickle"), ids=lambda fname: fname.name
 )
 def test_unpickle_pre_20(fname):
-    from shapely.testing import assert_geometries_equal
-
     geom_type = fname.name.split("_")[0]
     expected = TEST_DATA[geom_type]
 

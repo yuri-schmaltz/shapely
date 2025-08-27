@@ -1,6 +1,7 @@
 """Shapely errors."""
 
 import threading
+import warnings
 
 from shapely.lib import GEOSException, ShapelyError, _setup_signal_checks  # noqa: F401
 
@@ -57,8 +58,6 @@ class GeometryTypeError(ShapelyError):
 
 
 def __getattr__(name):
-    import warnings
-
     # Alias Shapely 1.8 error classes to ShapelyError with deprecation warning
     if name in [
         "ReadingError",
